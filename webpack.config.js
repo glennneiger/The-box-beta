@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
 const project = require('./aurelia_project/aurelia.json');
-const stencil = require('@stencil/webpack');
 const {
     AureliaPlugin,
     ModuleDependenciesPlugin
@@ -77,22 +76,6 @@ module.exports = ({
             maxSize: 40000, // splits chunks if bigger than 40k, adjust as required (maxSize added in webpack v4.15)
             cacheGroups: {
                 default: false, // Disable the built-in groups default & vendors (vendors is redefined below)
-                // You can insert additional cacheGroup entries here if you want to split out specific modules
-                // This is required in order to split out vendor css from the app css when using --extractCss
-                // For example to separate font-awesome and bootstrap:
-                // fontawesome: { // separates font-awesome css from the app css (font-awesome is only css/fonts)
-                //   name: 'vendor.font-awesome',
-                //   test:  /[\\/]node_modules[\\/]font-awesome[\\/]/,
-                //   priority: 100,
-                //   enforce: true
-                // },
-                // bootstrap: { // separates bootstrap js from vendors and also bootstrap css from app css
-                //   name: 'vendor.font-awesome',
-                //   test:  /[\\/]node_modules[\\/]bootstrap[\\/]/,
-                //   priority: 90,
-                //   enforce: true
-                // },
-
                 // This is the HTTP/2 optimised cacheGroup configuration
                 // generic 'initial/sync' vendor node module splits: separates out larger modules
                 vendorSplit: { // each node module as separate chunk file if module is bigger than minSize
@@ -260,6 +243,19 @@ module.exports = ({
         new ProvidePlugin({
             'Promise': 'bluebird'
         }),
+
+        new ModuleDependenciesPlugin({
+            'aurelia-testing': ['./compile-spy', './view-spy'],
+        }),
+        new CopyWebpackPlugin([{
+                from: 'config/config.json',
+                to: 'config/config.json'
+            },
+            {
+                from: 'web.config',
+                to: 'web.config'
+            }
+        ]),
         new HtmlWebpackPlugin({
             template: 'index.ejs',
             minify: production ? {
@@ -281,28 +277,16 @@ module.exports = ({
                 baseUrl
             }
         }),
-        new ModuleDependenciesPlugin({
-            'aurelia-testing': ['./compile-spy', './view-spy'],
-        }),
-        new stencil.StencilPlugin(),
-        new CopyWebpackPlugin([{
-                from: 'config/config.json',
-                to: 'config/config.json'
-            },
-            {
-                from: 'static',
-                to: 'static'
-            },
-            {
-                from: 'web.config',
-                to: 'web.config'
-            }
-        ]),
         // ref: https://webpack.js.org/plugins/mini-css-extract-plugin/
         ...when(extractCss, new MiniCssExtractPlugin({ // updated to match the naming conventions for the js files
             filename: production ? 'css/[name].[contenthash].bundle.css' : 'css/[name].[hash].bundle.css',
             chunkFilename: production ? 'css/[name].[contenthash].chunk.css' : 'css/[name].[hash].chunk.css'
         })),
+        ...when(production || server, new CopyWebpackPlugin([{
+            from: 'static',
+            to: outDir,
+            ignore: ['.*']
+        }])), // ignore dot (hidden) files
         ...when(analyze, new BundleAnalyzerPlugin())
     ]
 });

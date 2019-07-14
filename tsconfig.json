@@ -10,19 +10,15 @@
     "sourceMap": true,
     "allowJs": true,
     "baseUrl": "src",
-    "downlevelIteration": true,
     "skipLibCheck": true,
     "lib": [
       "es2017",
       "dom"
     ]
   },
-  "exclude": [
-    "node_modules",
-    "aurelia_project"
-  ],
-  "filesGlob": [
+  "include": [
     "./src/**/*.ts",
+    "./test/**/*.ts",
     "./custom_typings/**/*.d.ts"
   ],
   "atom": {
