@@ -1,0 +1,50 @@
+{
+  "defaultSeverity": "warning",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "linterOptions": {
+    "exclude": [
+      "./node_modules/**/*"
+    ]
+  },
+  "rulesDirectory": [],
+
+  "rules": {
+    "class-name": true,
+    "curly": [true, "as-needed"],
+    "disable-next-line:curly": true,
+    "max-line-length": false,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "public-instance-field",
+          "private-static-field",
+          "private-instance-field",
+          "public-constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
+    "quotemark": [true, "single", "avoid-escape"],
+    "radix": false,
+    "trailing-comma": [true, {
+      "multiline": "ignore",
+      "singleline": "never"
+    }],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-snake-case"
+    ],
+    "no-string-literal": false
+  }
+}
