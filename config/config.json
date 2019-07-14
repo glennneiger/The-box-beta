@@ -1,8 +1,8 @@
 {
-  "api": {
-    "baseUrl": ""
-  },
-  "environment": {
-    "name": ""
-  }
+    "api": {
+        "baseUrl": "w"
+    },
+    "environment": {
+        "name": "w"
+    }
 }
