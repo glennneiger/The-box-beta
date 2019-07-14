@@ -2,29 +2,17 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title><%- htmlWebpackPlugin.options.metadata.title %></title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-  <meta name="HandheldFriendly" content="true" />
-  <script defer src="static/scripts/fontawesome-all.min.js"></script>
-  <link rel="manifest" href="static/manifest.json">
-  <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.8/pwacompat.min.js"
-    integrity="sha384-uONtBTCBzHKF84F6XvyC8S0gL8HTkAPeCyBNvfLfsqHh+Kd6s/kaS4BdmNQ5ktp1"
-    crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <!-- imported CSS are concatenated and added automatically -->
-  <style>
-    body {
-      background: #212529;
-      color: white;
-      -webkit-user-select: none;
-      -webkit-touch-callout: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-  </style>
+    <meta charset="utf-8">
+    <title>
+        <%- htmlWebpackPlugin.options.metadata.title %>
+    </title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+    <meta name="HandheldFriendly" content="true" />
+    <script defer src="static/scripts/fontawesome-all.min.js"></script>
+    <link rel="manifest" href="static/manifest.json">
 </head>
 
 <body aurelia-app="main"></body>

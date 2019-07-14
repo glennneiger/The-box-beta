@@ -3,34 +3,10 @@ $color-background: #212529 !default;
 $color-navigator: #36a9e1 !default;
 $color-text-default: #fff !default;
 $color-text-grey: #f5f4f4 !default;
-$color-text-white: #fff !default;
 $color-primary: #343a40 !default;
 $color-secondary: darken($color-primary, 3%) !default;
 $color-info: #36a9e1 !default;
-$color-info-dark: #1c6fa0 !default;
 $color-success: #50af47 !default;
 $color-warning: #f7a600 !default;
 $color-danger: #c43923 !default;
-$color-input-background: darken($color-secondary, 2%) !default;
-$color-input-border: darken($color-secondary, 4%) !default;
-$font-family-sans-serif: "Rubik",
--apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-Arial,
-sans-serif,
-"Apple Color Emoji",
-"Segoe UI Emoji",
-"Segoe UI Symbol";
-$font-family-monospace: SFMono-Regular,
-Menlo,
-Monaco,
-Consolas,
-"Liberation Mono",
-"Courier New",
-monospace !default;
-$font-family-base: $font-family-sans-serif;
-$transition-duration-default: 0.3s;
 $theme-colors: ( "primary": $color-primary, "secondary": $color-secondary, "success": $color-success, "danger": $color-danger, "warning": $color-warning, "info": $color-info, "background": $color-background);
