@@ -64,9 +64,5 @@
         "valueConverters": "resources/value-converters",
         "bindingBehaviors": "resources/binding-behaviors"
     },
-    "testFramework": {
-        "id": "jasmine",
-        "displayName": "Jasmine"
-    },
     "packageManager": "npm"
 }

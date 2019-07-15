@@ -1,0 +1,30 @@
+body {
+    background: $color-background;
+    color: $color-text-default;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.test {
+    background: $color-text-default;
+    height: auto;
+    margin: 50px;
+    padding: 15px;
+    color: $color-text-black;
+    border-radius: 3px;
+}
+
+footer {
+    position: absolute;
+    font-size: 80%;
+    bottom: 30px;
+    left: auto;
+    right: auto;
+    margin: 0 auto;
+}
