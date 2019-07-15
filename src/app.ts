@@ -11,8 +11,8 @@ export class App {
     config.options.hashChange = false;
 
     config.map([
-      { route: ['', '/'], name: 'dash', moduleId: PLATFORM.moduleName('views/dash/dash'), title: 'Dash board', nav: true },
-      { route: 'page', name: 'dapageh', moduleId: PLATFORM.moduleName('views/page/page'), title: 'page 2', nav: true }
+      { route: ['', '/'], name: 'dash', moduleId: PLATFORM.moduleName('views/dash/dash'), title: 'Dashboard', nav: true },
+      { route: 'yahtzee', name: 'yahtzee', moduleId: PLATFORM.moduleName('views/yahtzee/yahtzee'), title: 'Yahtzee', nav: true }
     ]);
 
     this.router = router;
