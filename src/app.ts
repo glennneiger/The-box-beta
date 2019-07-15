@@ -9,6 +9,7 @@ export class App {
     config.title = 'The box beta';
     config.options.root = '/';
     config.options.hashChange = false;
+    config.options.pushState = true;
 
     config.map([
       { route: ['', '/'], name: 'dash', moduleId: PLATFORM.moduleName('views/dash/dash'), title: 'Dashboard', nav: true },
