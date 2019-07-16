@@ -1,5 +1,4 @@
 export class Demo {
-
     private toggleModal(id: string) {
         const modal = document.getElementById(id); // Get the modal by ID
 
