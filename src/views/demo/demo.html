@@ -1,23 +1,129 @@
 <template>
     <!-- Segmented control in standard bar fixed to top -->
-    <nav class="bar bar-standard">
-        <div class="segmented-control">
-            <a class="control-item active">Thing one</a>
-            <a class="control-item">Thing two</a>
-            <a class="control-item">Thing three</a>
+    <header class="bar bar-nav">
+        <a class="icon icon-compose pull-right" click.delegate="toggleModal('composeModal')"></a>
+        <a href="#navPopover">
+            <h1 class="title">
+                <span class="icon icon-home"></span>
+                Notes
+                <span class="icon icon-caret"></span>
+            </h1>
+        </a>
+    </header>
+
+    <div class="content">
+        <ul class="table-view">
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+            <li class="table-view-cell">
+                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+                    Note title goes here
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Compose modal -->
+    <div id="composeModal" class="modal">
+        <header class="bar bar-nav">
+            <a class="icon icon-left pull-left" click.delegate="toggleModal('composeModal')"></a>
+            <h1 class="title">New note</h1>
+        </header>
+
+        <div class="content">
+            <form class="content-padded">
+                <input type="text" placeholder="Title">
+                <textarea rows="10"></textarea>
+                <a class="btn btn-positive btn-block" click.delegate="toggleModal('composeModal')">Save note</a>
+            </form>
         </div>
-    </nav>
+    </div><!-- /.modal -->
 
-    <!-- Block button in standard bar fixed below top bar -->
-    <div class="bar bar-standard bar-header-secondary">
-        <button class="btn btn-block">Block level button</button>
+    <!-- Popover -->
+    <div id="navPopover" class="popover">
+        <ul class="table-view">
+            <li class="table-view-cell">Item1</li>
+            <li class="table-view-cell">Item2</li>
+            <li class="table-view-cell">Item3</li>
+            <li class="table-view-cell">Item4</li>
+            <li class="table-view-cell">Item5</li>
+            <li class="table-view-cell">Item6</li>
+            <li class="table-view-cell">Item7</li>
+            <li class="table-view-cell">Item8</li>
+            <li class="table-view-cell">Item9</li>
+            <li class="table-view-cell">Item10</li>
+        </ul>
     </div>
-
-    <!-- Block button in standard bar fixed above the footer -->
-    <div class="bar bar-standard bar-footer-secondary">
-        <button class="btn btn-block">Block level button</button>
-    </div>
-
     <!-- Icons in standard bar fixed to the bottom of the screen -->
     <div class="bar bar-standard bar-footer">
         <a class="icon icon-compose pull-left"></a>
