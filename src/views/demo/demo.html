@@ -1,6 +1,6 @@
 <template>
     <!-- Segmented control in standard bar fixed to top -->
-    <header class="bar bar-nav">
+    <!-- <header class="bar bar-nav">
         <a class="icon icon-compose pull-right" click.delegate="toggleModal('composeModal')"></a>
         <a href="#navPopover">
             <h1 class="title">
@@ -9,6 +9,13 @@
                 <span class="icon icon-caret"></span>
             </h1>
         </a>
+    </header> -->
+    <header class="bar bar-nav bar-dash pointer" click.delegate="toggleModal('profile')">
+        <div class="avatar btn btn-nav pull-left" data-transition="slide-out"
+            style="background-image: url('https://www.gravatar.com/avatar/levimbg@gmail.com');">
+        </div>
+        <h1 class="title">Levi Deurloo</h1>
+        <span class="sub-title">Profielinstellingen wijzigen</span>
     </header>
 
     <div class="content">
@@ -73,41 +80,62 @@
                     <p>Lorem ipsum dolor sit amet...</p>
                 </a>
             </li>
-            <li class="table-view-cell">
-                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-                    Note title goes here
-                    <p>Lorem ipsum dolor sit amet...</p>
-                </a>
-            </li>
-            <li class="table-view-cell">
-                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-                    Note title goes here
-                    <p>Lorem ipsum dolor sit amet...</p>
-                </a>
-            </li>
-            <li class="table-view-cell">
-                <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-                    Note title goes here
-                    <p>Lorem ipsum dolor sit amet...</p>
-                </a>
-            </li>
         </ul>
     </div>
     <!-- Compose modal -->
-    <div id="composeModal" class="modal">
+    <div id="profile" class="modal">
         <header class="bar bar-nav">
-            <a class="icon icon-left pull-left" click.delegate="toggleModal('composeModal')"></a>
-            <h1 class="title">New note</h1>
+            <a class="icon icon-left pull-left" click.delegate="toggleModal('profile')"></a>
+            <h1 class="title">Profiel instellingen</h1>
         </header>
 
         <div class="content">
-            <form class="content-padded">
-                <input type="text" placeholder="Title">
-                <textarea rows="10"></textarea>
-                <a class="btn btn-positive btn-block" click.delegate="toggleModal('composeModal')">Save note</a>
+            <div class="card">
+                <h6 style="margin-top:0px; float: left;">Level: <?php echo $getUser['level']; ?> </h6>
+                <h6 style="margin-top:0px; float: right; color: gray;">
+                    <?php echo $getUser['exp']; ?>/<?php echo $getUser['max_xp']; ?> XP
+                </h6>
+
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $xp; ?>%"
+                        aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <form method="post" class="input-group">
+                <div class="input-row">
+                    <label>Lid sinds</label>
+                    <input type="text" placeholder="16-02-1999" readonly="">
+                </div>
+                <div class="input-row">
+                    <label>Voornaam</label>
+                    <input type="text" name="fname">
+                </div>
+                <div class="input-row">
+                    <label>Achternaam</label>
+                    <input type="text" name="lname">
+                </div>
+                <div class="input-row">
+                    <label>Donkere modus</label>
+                    <div class="toggle active">
+                        <div class="toggle-handle"></div>
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <label>Geboortedatum</label>
+                    <input type="date" class="form-control" name="age">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+                <button type="submit" name="updateProfile" class="btn btn-block">Wijzigingen doorvoeren</button>
+            </form>
+
+            <form method="post">
+                <button type="submit" name="logout" class="btn btn-block">Uitloggen</button>
             </form>
         </div>
-    </div><!-- /.modal -->
+    </div>
 
     <!-- Popover -->
     <div id="navPopover" class="popover">
@@ -115,13 +143,6 @@
             <li class="table-view-cell">Item1</li>
             <li class="table-view-cell">Item2</li>
             <li class="table-view-cell">Item3</li>
-            <li class="table-view-cell">Item4</li>
-            <li class="table-view-cell">Item5</li>
-            <li class="table-view-cell">Item6</li>
-            <li class="table-view-cell">Item7</li>
-            <li class="table-view-cell">Item8</li>
-            <li class="table-view-cell">Item9</li>
-            <li class="table-view-cell">Item10</li>
         </ul>
     </div>
     <!-- Icons in standard bar fixed to the bottom of the screen -->
