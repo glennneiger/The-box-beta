@@ -1,5 +1,21 @@
+// Ratchet color global
+$ratchet-color-sub-text: #999 !default;
+//
+// Ratchet colors
+// $ratchet-color-background: #fff !default;
+// $ratchet-color-border: #ddd !default;
+// $ratchet-color-background-card: #fff !default;
+// $ratchet-color-text-default: #000 !default;
+// $chrome-color: #fff !default;
+// Ratchet colors (dark theme)
+$ratchet-color-background: #0D0D0D !default;
+$ratchet-color-border: #242424 !default;
+$ratchet-color-background-card: #181818 !default;
+$ratchet-color-text-default: #fff !default;
+$chrome-color: #111 !default;
+//
 // Base colors
 $color-background: #212529 !default;
+$color-text-default: $ratchet-color-text-default !default;
 $color-navigator: #00283b !default;
-$color-text-default: #fff !default;
 $color-text-black: #000 !default;

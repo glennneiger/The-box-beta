@@ -1,10 +1,38 @@
-// Framework imports
-@import 'partials/ratchet/ratchet.scss';
 // Global vars
 @import 'partials/colors.scss';
+//
+// Ratchet (framework) imports
+@import 'partials/ratchet/variables.scss'; // Variables import
+@import 'partials/ratchet/mixins.scss'; // Mixins
+//
+// // Normalize & Base CSS
+@import 'partials/ratchet/normalize.scss';
+@import 'partials/ratchet/base.scss';
+@import 'partials/ratchet/type.scss';
+//
+// // Components
+@import 'partials/ratchet/buttons.scss';
+@import 'partials/ratchet/bars.scss';
+@import 'partials/ratchet/badges.scss';
+@import 'partials/ratchet/cards.scss';
+@import 'partials/ratchet/table-views.scss';
+@import 'partials/ratchet/forms.scss';
+@import 'partials/ratchet/segmented-controls.scss';
+@import 'partials/ratchet/popovers.scss';
+//
+// // Javascript components
+@import 'partials/ratchet/modals.scss';
+@import 'partials/ratchet/sliders.scss';
+@import 'partials/ratchet/toggles.scss';
+@import 'partials/ratchet/push.scss';
+//
+// // Ratchicons
+@import 'partials/ratchet/ratchicons.scss';
+//
 // Global template styling
 @import 'partials/template.scss';
 @import '../views/demo/demo.scss';
+//
 // Custom overstyling of frameworks
 @import 'partials/ratchet/custom.scss';
 

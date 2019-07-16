@@ -1,0 +1,11 @@
+{
+    "name": "The Box Afters",
+    "short_name": "The Box",
+    "theme_color": "#171618",
+    "background_color": "#000000",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "Scope": "/ios",
+    "start_url": "/ios",
+    "splash_pages": []
+}
