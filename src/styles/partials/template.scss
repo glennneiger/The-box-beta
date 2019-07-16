@@ -1,11 +1,12 @@
 body {
     background: $color-background;
-    color: $color-text-default;
+    // color: $color-text-default;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
     h1 {
         text-align: center;
+        color: $color-text-default;
     }
     .test {
         background: $color-text-default;

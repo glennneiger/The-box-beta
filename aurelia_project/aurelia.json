@@ -20,7 +20,7 @@
         "id": "web",
         "displayName": "Web",
         "hmr": false,
-        "open": false,
+        "open": true,
         "port": 9000,
         "output": "dist"
     },
