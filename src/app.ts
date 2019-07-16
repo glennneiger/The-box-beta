@@ -13,6 +13,7 @@ export class App {
 
     config.map([
       { route: ['', '/'], name: 'dash', moduleId: PLATFORM.moduleName('views/dash/dash'), title: 'Dashboard', nav: true },
+      { route: 'demo', name: 'demo', moduleId: PLATFORM.moduleName('views/demo/demo'), title: 'Demo IOS', nav: true },
       { route: 'yahtzee', name: 'yahtzee', moduleId: PLATFORM.moduleName('views/yahtzee/yahtzee'), title: 'Yahtzee', nav: true }
     ]);
 
