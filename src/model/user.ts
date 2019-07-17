@@ -1,3 +1,7 @@
-export class User {
-    private username: string;
+export interface IUser {
+    username: string;
+    firstName: string;
+    lastName: string;
+    mailAddress: string;
+
 }
