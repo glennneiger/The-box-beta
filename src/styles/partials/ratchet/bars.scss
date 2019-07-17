@@ -6,7 +6,8 @@
         right: 0;
         left: 0;
         z-index: 10;
-        height: $bar-base-height;
+        height: calc($bar-base-height + env(afe-area-inset-top));
+        height: calc($bar-base-height + constant(afe-area-inset-top));
         padding-right: $bar-side-spacing;
         padding-left: $bar-side-spacing;
         background-color: $chrome-color;
@@ -77,6 +78,8 @@
     .bar-footer-secondary-tab {
         border-top: $border-default;
         border-bottom: 0;
+        bottom: - constant(safe-area-inset-bottom);
+        bottom: - env(safe-area-inset-bottom);
     }
     
     // Centered text in the .bar-nav
@@ -108,18 +111,23 @@
         display: table;
         bottom: 0;
         width: 100%;
-        height: $bar-tab-height;
+        height: calc($bar-tab-height + constant(safe-area-inset-bottom));
+        height: calc($bar-tab-height + env(safe-area-inset-bottom));
         padding: 0;
+        padding-bottom: constant(safe-area-inset-bottom);
+        padding-bottom: env(safe-area-inset-bottom);
         table-layout: fixed;
         border-top: $border-default;
         border-bottom: 0;
+        margin-bottom: - constant(safe-area-inset-botom);
+        margin-bottom: - env(safe-area-inset-botom);
         // Navigational tab (Nested to be more specific for the icons in tab-items)
         .tab-item {
             position: relative;
             display: table-cell;
             width: 1%;
             height: $bar-tab-height;
-            color: #929292;
+            color: $ratchet-color-text-default;
             text-align: center;
             vertical-align: middle;
             // Active states for the tab bar
