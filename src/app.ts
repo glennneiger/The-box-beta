@@ -22,9 +22,10 @@ export class App {
     config.options.pushState = true;
 
     config.map([
-      { route: ['', '/'], name: 'dash', moduleId: PLATFORM.moduleName('views/dash/dash'), icon: 'home', title: 'Dashboard', nav: true, settings: { data: 'home' } },
-      { route: 'demo', name: 'demo', moduleId: PLATFORM.moduleName('views/demo/demo'), icon: 'home', title: 'Demo IOS', nav: true, settings: { data: 'person' } },
-      { route: 'yahtzee', name: 'yahtzee', moduleId: PLATFORM.moduleName('views/yahtzee/yahtzee'), title: 'Yahtzee', nav: true, settings: { data: 'star' } }
+      { route: ['', '/'], name: 'dash', moduleId: PLATFORM.moduleName('views/dash/dash'), title: 'Dashboard', nav: true, settings: { data: 'home' } },
+      { route: 'demo', name: 'demo', moduleId: PLATFORM.moduleName('views/demo/demo'), title: 'Demo IOS', nav: true, settings: { data: 'person' } },
+      { route: 'yahtzee', name: 'yahtzee', moduleId: PLATFORM.moduleName('views/yahtzee/yahtzee'), title: 'Yahtzee', nav: true, settings: { data: 'star' } },
+      { route: 'drugs', name: 'drugs', moduleId: PLATFORM.moduleName('views/drugs/drugs'), title: 'Droga', nav: true, settings: { data: 'person' } },
     ]);
 
     this.router = router;

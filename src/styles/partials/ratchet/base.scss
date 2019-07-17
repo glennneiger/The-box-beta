@@ -8,6 +8,13 @@
     box-sizing: border-box;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height: calc(100% + env(safe-area-inset-top));
+    height: calc(100% + constant(safe-area-inset-top));
+}
+
 // We fix position the body and scroll `.content`.
 body {
     position: fixed;
@@ -40,6 +47,8 @@ a {
     bottom: 0;
     left: 0;
     overflow: auto;
+    padding-top: calc(($bar-base-height*1.5) + constant(safe-area-inset-top));
+    padding-top: calc(($bar-base-height*1.5) + env(safe-area-inset-top));
     background-color: $ratchet-color-background;
     -webkit-overflow-scrolling: touch;
 }
@@ -53,29 +62,44 @@ a {
 // Pad top/bottom of content so it doesn't hide behind bars.
 // Note: For these to work, content must come after both bars in the markup
 .bar-nav~.content {
-    padding-top: $bar-base-height;
+    padding-top: calc(($bar-base-height*3) + constant(safe-area-inset-top));
+    padding-top: calc(($bar-base-height*3) + env(safe-area-inset-top));
+}
+
+.bar-dash~.content {
+    padding-top: calc(65px + constant(safe-area-inset-top));
+    /* < ios 11.2 */
+    padding-top: calc(65px + env(safe-area-inset-top));
+    /* > ios 11.2 */
 }
 
 .bar-header-secondary~.content {
-    padding-top: ($bar-base-height*2);
+    padding-top: calc(($bar-base-height*2) + constant(safe-area-inset-top));
+    /* < ios 11.2 */
+    padding-top: calc(($bar-base-height*2) + env(safe-area-inset-top));
+    /* > ios 11.2 */
 }
 
 // Footer bar padding
 .bar-footer~.content {
-    padding-bottom: $bar-base-height;
+    padding-bottom: calc($bar-base-height + constant(safe-area-inset-bottom));
+    padding-bottom: calc($bar-base-height + env(safe-area-inset-bottom));
 }
 
 .bar-footer-secondary~.content {
-    padding-bottom: ($bar-base-height*2);
+    padding-bottom: calc(($bar-base-height*2) + constant(safe-area-inset-bottom));
+    padding-bottom: calc(($bar-base-height*2) + env(safe-area-inset-bottom));
 }
 
 // Tab bar padding
 .bar-tab~.content {
-    padding-bottom: $bar-tab-height;
+    padding-bottom: calc($bar-tab-height + constant(safe-area-inset-bottom));
+    padding-bottom: calc($bar-tab-height + env(safe-area-inset-bottom));
 }
 
 .bar-footer-secondary-tab~.content {
-    padding-bottom: ($bar-tab-height+$bar-base-height);
+    padding-bottom: calc($bar-tab-height + $bar-base-height + constant(safe-area-inset-bottom));
+    padding-bottom: calc($bar-tab-height + $bar-base-height + env(safe-area-inset-bottom));
 }
 
 // Utility classes

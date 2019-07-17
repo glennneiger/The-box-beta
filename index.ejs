@@ -11,11 +11,11 @@
     <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
     <meta name="HandheldFriendly" content="true" />
-    <script defer src="scripts/fontawesome-all.min.js"></script>
-    <script defer src="scripts/ratchet.js"></script>
-    <link rel="manifest" href="static/manifest.json">
+    <script defer src="<%- htmlWebpackPlugin.options.metadata.baseUrl %>/scripts/fontawesome-all.min.js"></script>
+    <script defer src="<%- htmlWebpackPlugin.options.metadata.baseUrl %>/scripts/ratchet.js"></script>
+    <link rel="manifest" href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>/manifest.json">
 </head>
 
-<body aurelia-app="main"></body>
+<body aurelia-app="main" ontouchstart=""></body>
 
 </html>
