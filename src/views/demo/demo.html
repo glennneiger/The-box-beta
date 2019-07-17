@@ -1,23 +1,4 @@
 <template>
-    <!-- Segmented control in standard bar fixed to top -->
-    <!-- <header class="bar bar-nav">
-        <a class="icon icon-compose pull-right" click.delegate="toggleModal('composeModal')"></a>
-        <a href="#navPopover">
-            <h1 class="title">
-                <span class="icon icon-home"></span>
-                Notes
-                <span class="icon icon-caret"></span>
-            </h1>
-        </a>
-    </header> -->
-    <header class="bar bar-nav bar-dash pointer" click.delegate="toggleModal('profile')">
-        <div class="avatar btn btn-nav pull-left" data-transition="slide-out"
-            style="background-image: url('https://www.gravatar.com/avatar/levimbg@gmail.com');">
-        </div>
-        <h1 class="title">Levi Deurloo</h1>
-        <span class="sub-title">Profielinstellingen wijzigen</span>
-    </header>
-
     <div class="content">
         <ul class="table-view">
             <li class="table-view-cell">
@@ -82,73 +63,4 @@
             </li>
         </ul>
     </div>
-    <!-- Compose modal -->
-    <div id="profile" class="modal">
-        <header class="bar bar-nav">
-            <a class="icon icon-left pull-left" click.delegate="toggleModal('profile')"></a>
-            <h1 class="title">Profiel instellingen</h1>
-        </header>
-
-        <div class="content">
-            <div class="card">
-                <h6 style="margin-top:0px; float: left;">Level: <?php echo $getUser['level']; ?> </h6>
-                <h6 style="margin-top:0px; float: right; color: gray;">
-                    <?php echo $getUser['exp']; ?>/<?php echo $getUser['max_xp']; ?> XP
-                </h6>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $xp; ?>%"
-                        aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
-
-            <form method="post" class="input-group">
-                <div class="input-row">
-                    <label>Lid sinds</label>
-                    <input type="text" placeholder="16-02-1999" readonly="">
-                </div>
-                <div class="input-row">
-                    <label>Voornaam</label>
-                    <input type="text" name="fname">
-                </div>
-                <div class="input-row">
-                    <label>Achternaam</label>
-                    <input type="text" name="lname">
-                </div>
-                <div class="input-row">
-                    <label>Donkere modus</label>
-                    <div class="toggle active">
-                        <div class="toggle-handle"></div>
-                    </div>
-                </div>
-
-                <div class="input-row">
-                    <label>Geboortedatum</label>
-                    <input type="date" class="form-control" name="age">
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
-                    </span>
-                </div>
-                <button type="submit" name="updateProfile" class="btn btn-block">Wijzigingen doorvoeren</button>
-            </form>
-
-            <form method="post">
-                <button type="submit" name="logout" class="btn btn-block">Uitloggen</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Popover -->
-    <div id="navPopover" class="popover">
-        <ul class="table-view">
-            <li class="table-view-cell">Item1</li>
-            <li class="table-view-cell">Item2</li>
-            <li class="table-view-cell">Item3</li>
-        </ul>
-    </div>
-    <!-- Icons in standard bar fixed to the bottom of the screen -->
-    <div class="bar bar-standard bar-footer">
-        <a class="icon icon-compose pull-left"></a>
-        <a class="icon icon-gear pull-right"></a>
-    </div>
-
 </template>
