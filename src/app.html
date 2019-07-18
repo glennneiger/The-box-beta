@@ -1,4 +1,71 @@
 <template>
   <require from="./styles/style.scss"></require>
-  <router-view></router-view>
+  <header class="bar bar-nav bar-dash pointer" click.delegate="modalService.toggleModal('profile')">
+    <div class="avatar btn btn-nav pull-left" data-transition="slide-out"
+      style="background-image: url('https://www.gravatar.com/avatar/levimbg@gmail.com');">
+    </div>
+    <h1 class="title">${sessionUser.firstName} ${sessionUser.lastName}</h1>
+    <span class="sub-title">Profielinstellingen wijzigen</span>
+  </header>
+
+  <nav class="bar bar-tab">
+    <a repeat.for="nav of router.navigation" href.bind="nav.href" class="tab-item ${nav.isActive ? 'active' : ''}"
+      data-transition="slide-in">
+      <span class="icon icon-${nav.settings.data}" href.bind="nav.href"></span>
+      <span class="tab-label" href.bind="nav.href">${nav.title}</span>
+    </a>
+  </nav>
+  <div id="profile" class="modal">
+    <header class="bar bar-nav">
+      <a class="icon icon-left pull-left" click.delegate="modalService.toggleModal('profile')"></a>
+      <h1 class="title">Profiel instellingen</h1>
+    </header>
+
+    <div class="content">
+      <div class="card">
+        <h6 style="margin-top:0px; float: left;">Level: <?php echo $getUser['level']; ?> </h6>
+        <h6 style="margin-top:0px; float: right; color: gray;">
+          <?php echo $getUser['exp']; ?>/<?php echo $getUser['max_xp']; ?> XP
+        </h6>
+
+        <div class="progress">
+          <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="10" aria-valuemin="0"
+            aria-valuemax="100"></div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <div class="input-row">
+          <label>Lid sinds</label>
+          <input type="text" placeholder="16-02-1999" readonly="">
+        </div>
+        <div class="input-row">
+          <label>Voornaam</label>
+          <input type="text" name="firstname" value.bind="sessionUser.firstName">
+        </div>
+        <div class="input-row">
+          <label>Achternaam</label>
+          <input type="text" name="lname" value.bind="sessionUser.lastName">
+        </div>
+        <div class="input-row">
+          <label>Donkere modus</label>
+          <div class="toggle active">
+            <div class="toggle-handle"></div>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <label>Geboortedatum</label>
+          <input type="date" class="form-control" name="age">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
+          </span>
+        </div>
+      </div>
+      <button type="submit" name="logout" class="btn btn-block">Uitloggen</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <router-view></router-view>
+  </div>
 </template>

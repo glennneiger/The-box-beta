@@ -4,20 +4,49 @@ body {
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
+    h1 {
+        text-align: center;
+        color: $color-text-default;
+    }
+    .test {
+        background: $color-text-default;
+        height: auto;
+        margin: 50px;
+        padding: 15px;
+        color: $color-text-black;
+        border-radius: 3px;
+    }
 }
 
-h1 {
-    text-align: center;
-    text-transform: uppercase;
+.pointer {
+    cursor: pointer;
 }
 
-.test {
-    background: $color-text-default;
-    height: auto;
-    margin: 50px;
-    padding: 15px;
-    color: $color-text-black;
+.avatar {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: 1px solid $ratchet-color-border !important;
+    background-color: #ccc !important;
+    color: black !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.progress {
+    border: 1px solid #3d3d3f;
     border-radius: 3px;
+    height: 25px;
+    background: #222224;
+    margin: 20px 0 0 0;
+}
+
+.progress-bar {
+    height: 23px;
+    border-radius: 3px;
+    padding-top: 1px;
+    background: #b30e71;
 }
 
 footer {
@@ -26,5 +55,4 @@ footer {
     bottom: 30px;
     left: auto;
     right: auto;
-    margin: 0 auto;
 }

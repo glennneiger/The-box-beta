@@ -1,6 +1,6 @@
 import { autoinject } from 'aurelia-framework';
 
 @autoinject()
-export class Yahtzee {
+export class Drugs {
   constructor() { }
 }
